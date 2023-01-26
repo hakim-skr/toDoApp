@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --darker : #0f1729;
+    --dark : #333a49;
+    --dark2 : #0f17291a;
+    --purpel : #8B5Cf6;
+}
+
+body {
+    position: relative;
+    background-color: var(--darker);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    background: var(--dark);
+    padding: 1rem 1.5rem;
+}
+#add-task-form {
+width: 100%;
+display: flex;
+justify-content: space-between;
+height: 45px;
+
+}
+#add-task-input {
+    width: calc(100% - 8ch );
+    height: 100%;
+    padding-left: 10px;
+    outline: none;
+    background: var(--darker);
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+#add-task-btn {
+    height: 80%;
+    margin-top: -1px;
+    margin-left: 5px;
+    
+}
+.btn {
+    position: relative;
+    padding: 5px 10px;
+    outline: none;
+    top: 0px;
+    border: solid #1a1a1a 3px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 0px #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.btn:hover {
+    top: 2px;
+    box-shadow: 0px 8px 0px #1a1a1a;
+}
+.btn:active {
+    transition: 100ms ease;
+    top: 8px;
+    box-shadow: 0px 2px 0px #1a1a1a;
+}
+
+#tasks-container {
+    width: 100%;
+
+}
+
+#taskes-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    color: gainsboro;
+}
+
+.task:not(:last-child) {
+    border-bottom: var(--darker) solid 1px; 
+}
+#tasks-list {
+    max-height: 67vh;
+    overflow-y: scroll;
+}
+#tasks-list::-webkit-scrollbar {
+    width: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark);
+    height: 40px;
+    align-items: center;
+    margin-bottom: 5px;
+    
+}
+.task input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: transparent;
+    color: rgb(232, 232, 232);
+    cursor: pointer;
+}
+.task input.completed {
+    text-decoration: line-through;
+}
+.task input:hover {
+    background : var(--dark2);
+    
+}
+
+.actions {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 10px;
+    margin-right: 20px;
+}
+.actions .delete {
+    color: tomato;
+    cursor: pointer;
+}
+.actions .edit {
+    color: #00FFAB;
+    cursor: pointer;
+}
+
+
+
