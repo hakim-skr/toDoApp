@@ -15,7 +15,7 @@
     <div class="container">
         <form action="" id="add-task-form">
             <input type="text" id="add-task-input" title="add to do" placeholder="Add a todo...">
-            <input type="button" class="btn" id="add-task-btn" value="add Task">
+            <input type="submit" class="btn" id="add-task-btn" value="add Task">
         </form>
         <div id="tasks-container">
             <div id="taskes-header">
@@ -23,8 +23,12 @@
                 <button class="btn delete-all" >delet All</button>
             </div>
             <div id="tasks-list">
-                <div class="task" data-id="">
-                    <input type="text" class="task-content" title="task" readonly value="my tsting task">                   
+                <div class="task" data-id="${element.id}">
+                    <div class="content">
+                        <input type="text" class=" ${element.completed?'task-content completed':'task-content'}" title="task" readonly value="${element.value}">                   
+                        <input type="checkbox" class="checkbox-input">
+                        <div class="checkbox"></div>
+                    </div>
                     <div class="actions">
                         <div class="edit"><i class="fa-solid fa-pencil"></i></div>
                         <div class="delete"><i class="fa-solid fa-trash-can"></i></div>
