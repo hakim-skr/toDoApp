@@ -89,9 +89,6 @@ height: 45px;
     color: gainsboro;
 }
 
-.task:not(:last-child) {
-    border-bottom: var(--darker) solid 1px; 
-}
 #tasks-list {
     max-height: 67vh;
     overflow-y: scroll;
@@ -106,10 +103,51 @@ height: 45px;
     background-color: var(--dark);
     height: 40px;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     
 }
-.task input {
+.task:not(:last-child) {
+    padding-bottom: 4px;
+    border-bottom: var(--darker) solid 1px; 
+}
+.task .content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+
+}
+.content .checkbox-input {
+    display: none;
+}
+.checkbox {
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 3px;
+    display: flex;
+    border: tomato 1px solid;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.checkbox::after {
+    content: "\2714";
+    color: transparent;
+
+}
+.checkbox-input {
+    display: none;
+}
+.checkbox-input:checked + .checkbox {
+    border: #00FFAB 1px solid;
+}
+.checkbox-input:checked + .checkbox::after {
+    
+    color:#00FFAB;
+}
+.task .content .task-content {
     height: 100%;
     width: 100%;
     padding-left: 10px;
@@ -121,10 +159,14 @@ height: 45px;
     color: rgb(232, 232, 232);
     cursor: pointer;
 }
-.task input.completed {
-    text-decoration: line-through;
+.task .content {
+    border-radius: 7px;
+   
 }
-.task input:hover {
+.task .content.done {
+    background : var(--dark2);
+}
+.task .content:hover {
     background : var(--dark2);
     
 }
