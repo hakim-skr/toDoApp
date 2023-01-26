@@ -30,7 +30,7 @@ body {
     max-width: 500px;
     border-radius: 10px;
     background: var(--dark);
-    padding: 1rem 1.5rem;
+    padding: 1rem;
 }
 #add-task-form {
 width: 100%;
@@ -187,6 +187,13 @@ height: 45px;
     color: #00FFAB;
     cursor: pointer;
 }
+@media (max-width:400px) {
+    .container {
+         width: 99%;
+        max-width: 100%;
+        padding: 1rem 10px;
+    }
 
+}
 
 
